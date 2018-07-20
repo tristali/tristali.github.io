@@ -1,0 +1,288 @@
+
+*{
+    box-sizing: border-box;
+}
+
+/*header*/
+
+header{
+    width: 100%;
+    background-color: #fff;
+}
+header>div{ 
+    position: relative;
+    letter-spacing: .13rem;
+}
+h1{
+    height: auto;
+    margin: 1rem auto;
+    font:1.4rem/1.5rem Century Gothic,微軟正黑體, Arial;
+    left: 2%;
+}
+header>div>div{
+    right: 0;
+}
+header>div>div>nav>ul>li,
+header>div>div>ul>li{
+    font: 0.9rem/2em "Century Gothic",Helvetica,Arial,"sans-serif";
+    padding: 0 10px;
+    padding: .3rem 0;
+    text-align: center;
+    padding: 1vh 0;
+}
+header>div>div>nav>ul>li>a,
+header>div>div>ul>li>a{
+    display: block;
+    padding: .5rem 0;
+}
+.item-container,
+.introduction-container{
+    width: 90%;
+    margin: 0 auto;
+}
+
+/*content*/
+
+.container {
+    padding-top: 1rem;
+}
+.banner-container>figure{
+    padding-bottom: 106%;
+    width: 100%;
+    height: 100%;
+    background: url(../images/top_mainvisual_201803.jpg) 50% 50%/cover no-repeat;
+}
+.banner-container>figure>img{
+    display: none;
+}
+
+.item-container>div{
+    max-width: 1100px;
+    margin: 2.3rem auto 0;
+    text-transform: uppercase;
+}
+
+.item-container li{
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+    margin-right: -3px;
+    padding: 3%;
+}
+
+.item-container li figcaption{
+    font: .85rem/1.5em  "Century Gothic",Helvetica,Arial,"sans-serif";
+    letter-spacing: .05rem;
+    text-align: left;
+    padding-left: .2rem;
+    padding-top: .3rem;
+}
+
+.item-container p{
+    padding: 1.2rem 0;
+    text-align: center;
+    background-color:#fbfbfb;
+    width: 100%; 
+    font: 1rem/1.5em "Century Gothic", Helvetica,Arial, "sans-serif" ;
+    letter-spacing: .13em;
+    margin-top: 2rem;
+    cursor: pointer;
+}
+.introduction-container{
+    margin-bottom: 5rem;
+}
+.introduction-container>div{
+    margin: 5rem auto 0;
+}
+.introduction-container>div>div>section,
+.introduction-container>div>div>figure{
+    width: 100%;
+    margin-right: -6px;
+    font:0.75rem/1.8em "微軟正黑體", "Microsoft Jheng Hei",Helvetica,Arial,"sans-serif";
+}
+.address-container::before{
+    content: "";
+    display: block;
+    width: 7px;
+    height: 1px;
+    background-color: gray;
+    margin: 1.6rem 0;
+}
+.introduction-container>div>div>section>figure{
+    margin-top: 3rem;
+}
+.introduction-container>div>div>section>h2>img{
+    height: 104px;
+    text-align: left;
+}
+
+.introduction-container>div>div>section>p{
+    margin-top: 3rem;
+
+}
+.introduction-container>div>div>figure{
+    display: none;
+}
+
+footer{
+    background-color: #fbfbfb;
+    font: .75rem/2em "Century Gothic",Helvetica,Arial,"sans-serif";
+    text-align: center;
+    padding: 1rem 1rem;
+    letter-spacing: .13rem;
+}
+span.ham{     background: #fff; padding:0 1%; z-index: 999; position: absolute; right:0; cursor: pointer;top: 0;}	
+span.ham>span{ display:block; width:24px; height:2px; border-radius:3px; background:#565656; margin:6px ;}
+div.ham_op{ display:none; position: relative; top: -1px; width: 100vw; background: rgba(255,255,255,.9);}
+div.ham_op>ul>li:nth-child(1){ border-top: solid 1px #ddd;}
+div.ham_op>ul>li{ border-bottom: solid 1px #ddd;}
+div.ham_op>ul>li>a{ text-decoration:none; color: #565656; font:18px/60px Century Gothic,微軟正黑體, Arial; width: 100%; padding: 0 0 0 20px;display: block;}
+div.ham_op>ul>li>a>span{ font:15px/15px Century Gothic,微軟正黑體, Arial; display: inline-block; border-left: solid 1px #999; padding: 0 10px; margin: 0 10px;}
+nav{    
+    position: fixed;
+    right:-290px;
+    height: 100vh;
+    background: #fff;
+    width: 290px;
+    display: block;
+    border-left: solid 1px #ddd;
+    top: 0;
+}
+
+ul.item_more,.less_item{
+    display:none;
+}
+div.open .more_item{
+    display: none;
+}
+div.open ul.item_more,
+div.open .less_item{
+  display:block;   
+}
+
+nav>ul{
+    pasdding.top:20px;
+}
+header>div>div>nav>ul>li{
+    border-bottom: solid 1px #ddd;
+    width: 90%;
+    margin: 0 auto;
+}
+.ham_box.off>span.ham{
+    right: 290px;
+}
+.ham_box.off>nav{
+    right: 0;
+}
+@media (max-width:0)and(min-width:544px){
+
+}
+
+@media (min-width:544px){
+    h1{
+        height: 15px;
+    }
+    header>div>div>nav>ul>li,
+    header>div>div>ul>li{
+        font: 0.9rem/1.5em "Century Gothic",Helvetica,Arial,"sans-serif";
+    }
+    header>div>div>nav>ul>li{
+        width: 100%;
+    }
+    header>div>div>nav>ul>li>a,
+    header>div>div>ul>li>a{
+       width: 100%;
+    }
+    .item-container>div,
+    .introduction-container>div{
+    margin: 10rem auto 0;
+    }
+    .item-container li{
+        width: 25%;
+        margin-right: -6px;
+        padding: 1.5%;
+    }
+    .item-container li figcaption{
+        font: .9rem/1.5em "Century Gothic",Helvetica,Arial,"sans-serif";
+        padding-left: .3rem;
+    }
+    .introduction-container {
+        margin-bottom: 10rem;
+    }
+    footer{
+        font: .8rem/2em "Century Gothic",Helvetica,Arial,"sans-serif";
+        padding: 1.2rem 0;
+    }
+}
+
+@media (min-width:780px){
+    h1{
+        font:2rem/1.5rem Century Gothic,微軟正黑體, Arial;
+    }
+    span.ham 
+    {top: 50%;}
+    .banner-container,
+    {
+    width: 90%;
+    margin: 0 auto;
+    }
+    .banner-container>figure{
+        padding-bottom: 700px;
+    }
+    .introduction-container>div>div>section,
+    .introduction-container>div>div>figure{
+    display: inline-block;
+    width: 50%;
+    margin-right: -6px;
+    font:1rem/1.8em "微軟正黑體", "Microsoft Jheng Hei",Helvetica,Arial,"sans-serif";
+    }
+    .introduction-container>div>div>section {
+        padding-right: 8%;
+    }
+    .introduction-container>div>div>section>figure{
+        display: none;
+    }
+    .introduction-container>div>div>figure{
+        vertical-align:top;
+    }
+}
+
+@media (min-width:1000px){
+    h1 {
+        margin: 0 auto;
+    }
+    header{
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 86px;
+    }
+    header>div{ 
+        height: 66px;
+    }
+    h1{
+     position: absolute;
+     top: 50%;
+    }
+    .container{
+        padding-top: 86px;
+    }
+}
+
+
+@media (min-width:1500px){
+    header{
+        height: 132px;
+    }
+    header>div{ 
+        margin-bottom: 32px;
+        height: 100px;
+    }
+    header>div>div>nav>ul>li,
+    header>div>div>ul>li{
+    font: 1rem/1.5em "Century Gothic",Helvetica,Arial,"sans-serif";
+    }
+    .container{
+        padding-top: 132px;
+    }
+}

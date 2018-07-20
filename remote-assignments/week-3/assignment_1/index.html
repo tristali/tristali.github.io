@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width">
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      var item = [
+        {
+          imgsrc: "images/item01.jpg",
+          name: "orumina kiln / small dish",
+          id:1,
+        },
+        {
+          imgsrc: "images/item02.jpg",
+          name: "orumina kiln / small dish",
+          id:2,
+        },
+        {
+          imgsrc: "images/item03.jpg",
+          name: "orumina kiln / small dish",
+          id:3,
+        },
+        {
+          imgsrc: "images/item04.jpg",
+          name: "orumina kiln / small dish",
+          id:4,
+        },
+        {
+          imgsrc: "images/item05.jpg",
+          name: "orumina kiln / small dish",
+          id:5,
+        },
+        {
+          imgsrc: "images/item06.jpg",
+          name: "orumina kiln / small dish",
+          id:6,
+        },
+        {
+          imgsrc: "images/item07.jpg",
+          name: "orumina kiln / small dish",
+          id:7,
+        },
+        {
+          imgsrc: "images/item08.jpg",
+          name: "orumina kiln / small dish",
+          id:8,
+        },
+      ];
+      class Hello extends React.Component{
+        constructor(props) {
+          super(props);
+          this.state = {isToggleOn: true};
+        
+          // This binding is necessary to make `this` work in the callback
+          this.handleClick = this.handleClick.bind(this);
+        }
+        handleClick() {
+            this.setState(prevState => ({
+              isToggleOn: !prevState.isToggleOn
+            }));
+        }
+        render(){
+          return(
+            <h1>
+              <a href="#"  onClick={this.handleClick} >
+                {this.state.isToggleOn ? 'Welcome' : 'Have a Good Time!'}
+              </a>
+            </h1>  
+        );
+        }
+      }
+
+      class Toggle extends React.Component {
+        constructor(props) {
+          super(props);
+            this.state = {isToggleOn: true};
+        
+            // This binding is necessary to make `this` work in the callback
+            this.handleClick = this.handleClick.bind(this);
+          }
+        
+          handleClick() {
+            this.setState(prevState => ({
+              isToggleOn: !prevState.isToggleOn
+            }));
+          }
+      
+        render() {
+          return (
+            <div className={this.state.isToggleOn ? 'ham_box' : 'ham_box off'}>
+                <span className="ham" onClick={this.handleClick} >
+                <span></span>
+                <span></span>
+                <span></span>
+                </span>
+                <nav>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Items</a></li>
+                        <li><a href="#">Cafe</a></li>
+                        <li><a href="#">Sign In</a></li>
+                        <li><a href="#">Cart (0)</a></li>
+                    </ul>
+                </nav>     
+            </div>
+          );
+        }
+      }
+  
+      function Header(props) {
+        return(
+        <header>
+            <div>
+              <Hello />
+              <Toggle />    
+            </div>   
+        </header>
+        );
+      }
+      class BannerContainer extends React.Component{
+        constructor(props) {
+          super(props);
+        }
+        render(){
+          return(
+          <div className="banner-container">
+              <figure>
+                <img src="images/top_mainvisual_201803.jpg" />
+              </figure>
+          </div>  
+        );
+        }
+      }
+      function ItemProduct(props) {
+        return(
+          <li>
+            <a href="#">
+              <figure>
+                <img src={props.imgsrc}/>
+                <figcaption>{props.name}</figcaption>
+              </figure>
+            </a>
+          </li>
+        );
+      }
+      class ItemContainer extends React.Component{
+        constructor(props) {
+          super(props);
+          this.state = {isToggleOn: true};
+        
+          // This binding is necessary to make `this` work in the callback
+          this.handleClick = this.handleClick.bind(this);
+
+        }
+        handleClick() {
+          this.setState(prevState => ({
+            isToggleOn: !prevState.isToggleOn
+          }));
+        }
+        render(){
+          return(
+            <div className="item-container">
+              <div className={this.state.isToggleOn ? '' : 'open'}>
+                  <ul>
+                    {item.map(function(item) {
+                      return <ItemProduct imgsrc={item.imgsrc} name={item.name} key={item.id}/>
+                    })}
+                  </ul>
+                  <p className="more_item" onClick={this.handleClick}>more item</p>
+                  <ul className="item_more" >
+                    {item.map(function(item) {
+                      return <ItemProduct imgsrc={item.imgsrc} name={item.name} key={item.id}/>
+                    })}          
+                  </ul>
+                  <p className="less_item" onClick={this.handleClick}>less item</p>
+              </div>    
+          </div>  
+        );
+        }
+      }
+      function Section(props) {
+        return(
+          <section>
+            <h2><img src="images/logo(1).svg" /></h2>
+            <figure>
+                <img src="images/top_shop-1.jpg" />
+            </figure>
+            <p>
+              公園是一家商店，處理2017年11月在東京都調布的Chofuji Temple開設的咖啡館/生活方式工具。我們銷售的產品可以長期使用，主要集中在日本各個製造商生產的工具和生活工具上。<br />
+              在咖啡廳，我們將製作手衝咖啡，甜甜圈，咖哩等。我們在等你。咖啡和甜甜圈也可以在公園裡取出吃。
+            </p>
+            <address>
+                <ul className="address-container">
+                    <li>地址：182-0011東京都調布市Shiokodera町1-2-1</li>
+                    <li>營業時間：週一周一10：00-17：00</li>
+                    <li>電話號碼：042-426-7114</li>
+                    <li><a href="mailto:shop@thisispark.jp">電子郵件地址：shop@thisispark.jp</a></li>
+                </ul>    
+            </address>
+        </section> 
+        );
+      }
+      function Figure(props) {
+        return(
+          <figure>
+            <img src="images/top_shop-1.jpg" />
+          </figure>
+        );
+      }
+      function IntroductionContainer(props) {
+        return(
+          <div className="introduction-container">
+            <div>
+              <div>
+                <Section />
+                <Figure />
+              </div>  
+            </div>  
+          </div> 
+        );
+      }
+
+      function Container(props) {
+        return(
+          <div className="container">
+            <BannerContainer />
+            <ItemContainer />
+            <IntroductionContainer />
+          </div>  
+        );
+      }
+
+      function Footer(props) {
+        return(
+          <footer>
+            <p>&copy;park reference https://thisispark.jp/</p>
+          </footer>
+        );
+      }
+
+    function Application(props) {
+        return(
+          <div>
+            <Header />
+            <Container />
+            <Footer />
+          </div>
+        );
+      }
+      ReactDOM.render(<Application />, document.getElementById('root'));
+
+    </script>
+  </body>
+</html>
