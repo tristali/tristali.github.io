@@ -12,22 +12,19 @@ function caculate(args) {
 }
 
 //way1
-// caculate({op:'+',n1:3, n2:4});
+caculate({op:'+',n1:3, n2:4});
 
 // //way2
-// const args = new Object();
-// args.op='+';
-// args.n1= 1 ;
-// args.n2= 9 ;
-// caculate(args);
+const args1 = new Object();
+args1.op='+';
+args1.n1= 1 ;
+args1.n2= 9 ;
+caculate(args1);
 
-//way3
-// const args= {
-//     op:'+',
-//     n1: 1 ,
-//     n2: 9 ,
-// };
-args['op'] = '-';
-args['n1'] = 1 ;
-args['n2'] = 9 ;
-caculate(args);
+// way3
+const args2= {
+    op:'-',
+    n1: 1 ,
+    n2: 9 ,
+};
+caculate(args2);
